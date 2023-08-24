@@ -49,6 +49,17 @@ public class ParameterConverter {
         this.writer = new FileWriter(tempFile);
     }
 
+
+    //TODO 폴더 변환 추가
+
+    public File convert() throws IOException {
+        return this.convert(targetFile.getParentFile().getPath(), targetFile.getName());
+    }
+
+    public File convert(String convertFileName) throws IOException {
+        return this.convert(targetFile.getParentFile().getPath(), convertFileName);
+    }
+
     public File convert(String convertFileFolder, String convertFileName) throws IOException {
         String convertFilePath = getConvertFilePath(convertFileFolder, convertFileName);
 
